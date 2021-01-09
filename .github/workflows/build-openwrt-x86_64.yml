@@ -34,7 +34,7 @@ on:
         default: 'false'
   schedule:
     - cron: 0 20 * * *
-  # 每日凌晨4点自动编译
+# 每日凌晨4点自动编译
 
 jobs:
   build:
