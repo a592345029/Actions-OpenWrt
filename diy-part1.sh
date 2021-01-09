@@ -12,7 +12,7 @@
 
 # fw876/helloworld (Uncomment a feed source)
 sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
-#sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
+sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
 sed -i '$a src-git xiaoqingfeng https://github.com/xiaoqingfengATGH/feeds-xiaoqingfeng' feeds.conf.default
 #====================================================================
 
