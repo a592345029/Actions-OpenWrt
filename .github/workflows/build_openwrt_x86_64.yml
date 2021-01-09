@@ -77,16 +77,19 @@ jobs:
         ./scripts/feeds update -a && ./scripts/feeds install -a
         ./scripts/feeds update -a && ./scripts/feeds install -a
 
-    - name: Load custom configuration
+    - name: Import external feeds
+      working-directory: ./openwrt
       run: |
-        cd openwrt
-        rm -rf subweb feeds/xiaoqingfeng
-        rm -rf luci-app-jd-dailybonus feeds/luci-app-jd-dailybonus
-        rm -rf luci-theme-argon package/lean
+        rm -rf subweb package/feeds
+        rm -rf luci-app-jd-dailybonus package/feeds
+        rm -rf luci-theme-argon package/lean package/feeds
         git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
         git clone https://github.com/xiaorouji/openwrt-passwall package/passwall
         git clone https://github.com/jerrykuku/luci-app-jd-dailybonus package/luci-app-jd-dailybonus
         
+        
+    - name: Load custom configuration
+      run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
