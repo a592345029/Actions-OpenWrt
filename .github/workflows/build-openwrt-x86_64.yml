@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #====================================================================
 
-name: build-openwrt-x86_64
+name: Build OpenWrt x86_64
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
@@ -33,14 +33,13 @@ on:
         required: false
         default: 'false'
   schedule:
-    - cron: 0 20 * * *   
-# 每日凌晨自动编译        
-#   - cron: 0 8 */5 * *
+    - cron: 0 20 * * *
+  # 每日凌晨4点自动编译
 
 jobs:
   build:
     runs-on: ubuntu-18.04
-    
+
     steps:
     - name: Checkout
       uses: actions/checkout@main
@@ -49,7 +48,7 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc /etc/mysql /etc/php
+        sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
         sudo -E apt-get -qq update
         sudo -E apt-get -qq install $(curl -fsSL git.io/depends-ubuntu-1804)
         sudo -E apt-get -qq autoremove --purge
@@ -72,11 +71,11 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
-    - name: Update feeds & Install feeds
-      run: | 
-        cd openwrt 
-        ./scripts/feeds update -a && ./scripts/feeds install -a
-        ./scripts/feeds update -a && ./scripts/feeds install -a
+    - name: Update feeds
+      run: cd openwrt && ./scripts/feeds update -a
+
+    - name: Install feeds
+      run: cd openwrt && ./scripts/feeds install -a
 
     - name: Load custom configuration
       run: |
@@ -107,7 +106,7 @@ jobs:
       run: |
         cd openwrt
         echo -e "$(nproc) thread compile"
-        make -j$(($(nproc) + 1)) || make -j1 V=s
+        make -j$(nproc) || make -j1 || make -j1 V=s
         echo "::set-output name=status::success"
         grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > DEVICE_NAME
         [ -s DEVICE_NAME ] && echo "DEVICE_NAME=_$(cat DEVICE_NAME)" >> $GITHUB_ENV
