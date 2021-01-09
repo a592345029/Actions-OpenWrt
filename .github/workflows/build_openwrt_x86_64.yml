@@ -87,6 +87,8 @@ jobs:
         git clone https://github.com/xiaorouji/openwrt-passwall package/passwall
         git clone https://github.com/jerrykuku/luci-app-jd-dailybonus package/luci-app-jd-dailybonus
         
+        ./scripts/feeds update -a && ./scripts/feeds install -a
+        ./scripts/feeds update -a && ./scripts/feeds install -a
         
     - name: Load custom configuration
       run: |
