@@ -6,7 +6,8 @@
 # See /LICENSE for more information.
 #
 # https://github.com/iplcdn/Actions-OpenWrt
-# Description: Build OpenWrt using GitHub Actions
+# File name: diy-part1.sh
+# Description: OpenWrt DIY script part 1 (Before Update feeds)
 #====================================================================
 
 # fw876/helloworld
