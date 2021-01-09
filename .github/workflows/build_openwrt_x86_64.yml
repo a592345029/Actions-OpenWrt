@@ -80,12 +80,11 @@ jobs:
     - name: Import external feeds
       working-directory: ./openwrt
       run: |
-        rm -rf subweb package/feeds/xiaoqingfeng
-        rm -rf luci-app-jd-dailybonus package/feeds
+        rm -rf subweb ./feeds/xiaoqingfeng
+        rm -rf luci-app-jd-dailybonus ./feeds
         rm -rf luci-theme-argon package/lean package/feeds
-        git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
-        git clone https://github.com/xiaorouji/openwrt-passwall package/passwall
-        git clone https://github.com/jerrykuku/luci-app-jd-dailybonus package/luci-app-jd-dailybonus
+        git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/feeds/luci-theme-argon
+        git clone https://github.com/jerrykuku/luci-app-jd-dailybonus package/feeds/luci-app-jd-dailybonus
         
         ./scripts/feeds update -a && ./scripts/feeds install -a
         ./scripts/feeds update -a && ./scripts/feeds install -a
