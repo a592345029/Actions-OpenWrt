@@ -14,6 +14,7 @@
 sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
 sed -i '$a src-git xiaoqingfeng https://github.com/xiaoqingfengATGH/feeds-xiaoqingfeng' feeds.conf.default
+rm -rf luci-theme-argon package/lean
 sed -i '$a src-git luci-theme-argon https://github.com/jerrykuku/luci-theme-argon' feeds.conf.default
 #====================================================================
 
