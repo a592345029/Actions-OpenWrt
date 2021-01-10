@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build OpenWrt x86_64
+name: P3TERX OpenWrt x86_64
 
 
 env:
@@ -73,6 +73,7 @@ jobs:
       run: cd openwrt && ./scripts/feeds update -a
 
     - name: Install feeds
+      run: cd openwrt && ./scripts/feeds install -a
       run: cd openwrt && ./scripts/feeds install -a
 
     - name: Load custom configuration
