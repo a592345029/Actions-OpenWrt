@@ -11,8 +11,8 @@
 #====================================================================
 
 # fw876/helloworld (Uncomment a feed source)
-#sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
-sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
+sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
+#sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
 
 sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
 sed -i '$a src-git jerrykuku https://github.com/jerrykuku/openwrt-package' feeds.conf.default
