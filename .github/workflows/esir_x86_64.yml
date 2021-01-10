@@ -69,8 +69,13 @@ jobs:
         CONFIG_FILE: x86_64.config
         DIY_P1_SH: diy-part1.sh
         DIY_P2_SH: diy-part2.sh
+     
+      working-directory: /workdir
       run: |
-        git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
+        df -hT $PWD
+        git clone $REPO_URL -b $REPO_BRANCH openwrt
+        ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
+
     #   cd openwrt
     #   sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
   
