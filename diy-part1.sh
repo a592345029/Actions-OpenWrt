@@ -11,10 +11,13 @@
 #====================================================================
 
 # fw876/helloworld (Uncomment a feed source)
-sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
+#sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
+
+sed -i "s/https:/R20.12.12 iplcdn/g"  package/lean/default-settings/files/zzz-default-settings
+
 sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
 sed -i '$a src-git jerrykuku https://github.com/jerrykuku/openwrt-package' feeds.conf.default
 sed -i '$a src-git OpenClash https://github.com/vernesong/OpenClash' feeds.conf.default
 #====================================================================
-#sed -i '$a src-git OpenAppFilter https://github.com/destan19/OpenAppFilter' feeds.conf.default
+sed -i '$a src-git OpenAppFilter https://github.com/destan19/OpenAppFilter' feeds.conf.default
 
