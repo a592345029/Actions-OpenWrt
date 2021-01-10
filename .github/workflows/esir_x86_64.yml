@@ -64,18 +64,22 @@ jobs:
       env: 
         REPO_URL: https://github.com/coolsnowwolf/lede
         REPO_BRANCH: master
+
+        FEEDS_CONF: feeds.conf.default
+        CONFIG_FILE: x86_64.config
+        DIY_P1_SH: diy-part1.sh
+        DIY_P2_SH: diy-part2.sh
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
     #   cd openwrt
     #   sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
   
     - name: Load custom feeds
-      env:
-        CONFIG_FILE: 'x86_64.config'
       run: |
-        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        chmod +x ./diy-part1.sh && ./diy-part1.sh
-        cd openwrt && make defconfig    
+        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
+        chmod +x $DIY_P1_SH
+        cd openwrt
+        $GITHUB_WORKSPACE/$DIY_P1_SH
     
     - name: Update & Install feeds
       working-directory: ./openwrt
@@ -90,13 +94,13 @@ jobs:
     #    git clone https://github.com/xiaorouji/openwrt-package.git package/lienol
     #    git clone "your_github_link" package/"your_folder_name"      
 
-    - name: Configuration Customization - Build_x86_64
-      env:
-        CONFIG_FILE: 'x86_64.config'
+    - name: Load custom configuration
       run: |
+        [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        chmod +x ./diy-part2.sh && ./diy-part2.sh
-        cd openwrt && make defconfig
+        chmod +x $DIY_P2_SH
+        cd openwrt
+        $GITHUB_WORKSPACE/$DIY_P2_SH
         
     - name: Download package
       working-directory: ./openwrt
