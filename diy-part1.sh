@@ -12,6 +12,7 @@
 
 # fw876/helloworld (Uncomment a feed source)
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
+sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
 
 sed -i "s/https:/R20.12.12 iplcdn/g"  package/lean/default-settings/files/zzz-default-settings
 
