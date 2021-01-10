@@ -1,3 +1,13 @@
+#============================================================
+# Copyright (c) 2019-2020 iplcdn <https://iplcdn.com>
+#
+# This is free software, licensed under the MIT License.
+# See /LICENSE for more information.
+#
+# https://github.com/iplcdn/Actions-OpenWrt
+# Description: Build OpenWrt using GitHub Actions
+#============================================================
+
 name: esir_x86_64
 
 on: 
