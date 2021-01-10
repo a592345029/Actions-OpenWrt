@@ -22,6 +22,8 @@ sed -i 's/OpenWrt/iplcdn/g' package/base-files/files/bin/config_generate
 # Modify the version number
 sed -i "s/OpenWrt /iplcdn build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
 
+sed -i "s/https:/R20.12.12 iplcdn/g"  package/lean/default-settings/files/zzz-default-settings
+
 # Modify default theme
 rm -rf package/lean/luci-theme-argon
 sed -i 's/luci-theme-bootstrap/luci-theme-argon-18.06/g' feeds/luci/collections/luci/Makefile
