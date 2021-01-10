@@ -64,11 +64,13 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         ./scripts/feeds install -a
-    #- name: Import external feeds
-    #  working-directory: ./openwrt
-    #  run: |
-    #    git clone https://github.com/xiaorouji/openwrt-package.git package/lienol
-    #    git clone "your_github_link" package/"your_folder_name"      
+    - name: Import external feeds
+      working-directory: ./openwrt
+      run: |
+        rm -rf luci-theme-argon package/lean
+        git clone https://github.com/xiaorouji/openwrt-passwall package/passwall
+        git clone https://github.com/xiaoqingfengATGH/feeds-xiaoqingfeng.git package/xiaoqingfeng
+        git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 
     - name: Configuration Customization - Build_x86_64
       env:
