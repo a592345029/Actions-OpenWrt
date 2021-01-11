@@ -22,7 +22,7 @@ sed -i 's/OpenWrt/iplcdn/g' package/base-files/files/bin/config_generate
 # Modify the version number
 sed -i "s/OpenWrt /iplcdn build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
 
-sed -i "s/https:/R20.12.12 iplcdn/g"  package/lean/default-settings/files/zzz-default-settings
+sed -i "s/https:/R20.12.12 complied by iplcdn/g"  package/lean/default-settings/files/zzz-default-settings
 
 # Modify default theme
 rm -rf package/lean/luci-theme-argon
@@ -30,8 +30,8 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon-18.06/g' feeds/luci/collections/
 
 # Add kernel build user
 [ -z $(grep "CONFIG_KERNEL_BUILD_USER=" .config) ] &&
-    echo 'CONFIG_KERNEL_BUILD_USER="P3TERX"' >>.config ||
-    sed -i 's@\(CONFIG_KERNEL_BUILD_USER=\).*@\1$"P3TERX"@' .config
+    echo 'CONFIG_KERNEL_BUILD_USER="iplcdn"' >>.config ||
+    sed -i 's@\(CONFIG_KERNEL_BUILD_USER=\).*@\1$"iplcdn"@' .config
 
 # Add kernel build domain
 [ -z $(grep "CONFIG_KERNEL_BUILD_DOMAIN=" .config) ] &&
