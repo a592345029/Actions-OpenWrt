@@ -17,7 +17,7 @@ sed -i 's/192.168.1.1/192.168.0.1/g' package/base-files/files/bin/config_generat
 #sed -i 's/OpenWrt/OpenWrt/g' package/base-files/files/bin/config_generate
 
 # Modify the version number
-sed -i "s/OpenWrt /complied by iplcdn $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
+sed -i "s/OpenWrt /iplcdn build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
 
 #rm -rf package/feeds/routing/olsrd/patches/012-gpsd.patch
 #rm -rf package/lean/default-settings/files/zzz-default-settings
