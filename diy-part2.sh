@@ -19,7 +19,7 @@ sed -i 's/192.168.1.1/192.168.0.1/g' package/base-files/files/bin/config_generat
 # Modify the version number
 sed -i "s/OpenWrt /complied by iplcdn $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
 
-rm -rf package/feeds/routing/olsrd/patches/012-gpsd.patch
+#rm -rf package/feeds/routing/olsrd/patches/012-gpsd.patch
 #rm -rf package/lean/default-settings/files/zzz-default-settings
 #wget https://raw.githubusercontent.com/coolsnowwolf/lede/99222f49fd9f63eef575ac34f251280e6e97f3b3/package/lean/default-settings/files/zzz-default-settings -O package/lean/default-settings/files/zzz-default-settings
 sed -i 's/DEPENDS.*/& \+luci-i18n-samba-zh-cn/g'         package/lean/autosamba/Makefile
