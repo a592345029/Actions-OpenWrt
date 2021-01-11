@@ -14,15 +14,15 @@
 sed -i 's/192.168.1.1/192.168.0.1/g' package/base-files/files/bin/config_generate
 
 # Delete default password
-#sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-default-settings
+sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-default-settings
 
 # Modify hostname
-sed -i 's/OpenWrt/iplcdn/g' package/base-files/files/bin/config_generate
+#sed -i 's/OpenWrt/OpenWrt/g' package/base-files/files/bin/config_generate
 
 # Modify the version number
-sed -i "s/OpenWrt /iplcdn build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
+sed -i "s/OpenWrt /complied by iplcdn $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
 
-sed -i "s/https:/R20.12.12 complied by iplcdn/g"  package/lean/default-settings/files/zzz-default-settings
+sed -i "s/https://github.com/iplcdn/g"  package/lean/default-settings/files/zzz-default-settings
 
 # Modify default theme
 rm -rf package/lean/luci-theme-argon
@@ -30,8 +30,8 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon-18.06/g' feeds/luci/collections/
 
 # Add kernel build user
 [ -z $(grep "CONFIG_KERNEL_BUILD_USER=" .config) ] &&
-    echo 'CONFIG_KERNEL_BUILD_USER="iplcdn"' >>.config ||
-    sed -i 's@\(CONFIG_KERNEL_BUILD_USER=\).*@\1$"iplcdn"@' .config
+    echo 'CONFIG_KERNEL_BUILD_USER="OpenWrt"' >>.config ||
+    sed -i 's@\(CONFIG_KERNEL_BUILD_USER=\).*@\1$"OpenWrt"@' .config
 
 # Add kernel build domain
 [ -z $(grep "CONFIG_KERNEL_BUILD_DOMAIN=" .config) ] &&
