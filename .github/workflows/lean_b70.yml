@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #============================================================
 
-name: p3terx_b70
+name: lean_b70
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
@@ -34,7 +34,7 @@ on:
         default: 'false'
   schedule:
   #  - cron: 0 8 */5 * *
-    - cron: 0 14 * * *
+    - cron: 0 20 * * *
   #  - cron: 0 22,14 * * *
   # 每天运行两次，在上午 6 点和晚上 22 点。 
 
