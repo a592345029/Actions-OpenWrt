@@ -17,6 +17,12 @@ sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
 sed -i '$a src-git jerrykuku https://github.com/jerrykuku/openwrt-package' feeds.conf.default
 sed -i '$a src-git OpenClash https://github.com/vernesong/OpenClash' feeds.conf.default
-#====================================================================
 sed -i '$a src-git OpenAppFilter https://github.com/destan19/OpenAppFilter' feeds.conf.default
 
+#====================================================================
+
+#git clone https://github.com/jerrykuku/luci-theme-argon.git -b 18.06                                     package/luci-theme-argon-jerrykuku
+#git clone https://github.com/tty228/luci-app-serverchan.git                                              package/luci-app-serverchan
+#git clone https://github.com/vernesong/OpenClash.git -b master                                           package/luci-app-openclash
+#git clone https://github.com/tindy2013/openwrt-subconverter.git                                          package/openwrt-subconverter
+#====================================================================
