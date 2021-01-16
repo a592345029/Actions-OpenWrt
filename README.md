@@ -25,6 +25,3 @@ Github Actions 是 GitHub 推出的持续集成服务，它提供了配置非常
 - 完成后按快捷键`Ctrl+D`或执行`exit`命令退出，后续编译工作将自动进行。
 - 这样比较灵活，可以根据路由器硬件通过云`menuconfig`自定义配置固件，不需要再导出`.config`和上传
 - 进阶玩法请看P3TERX的博客[中文教程](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
-
-Build OpenWrt firware [Lean's OpenWrt](https://github.com/coolsnowwolf/lede) using GitHub Actions  
-Hereby thank P3TERX for his amazing job: https://github.com/P3TERX/Actions-OpenWrt/  
