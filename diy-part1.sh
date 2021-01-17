@@ -31,5 +31,6 @@ git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 git clone https://github.com/tty228/luci-app-serverchan.git package/serverchan
 git clone https://github.com/vernesong/OpenClash.git -b master package/OpenClash
 git clone https://github.com/tindy2013/openwrt-subconverter.git package/subconverter
+git clone https://github.com/xiaoqingfengATGH/feeds-xiaoqingfeng.git package/xiaoqingfeng
 
 #====================================================================
