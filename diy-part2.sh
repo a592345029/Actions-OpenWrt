@@ -23,7 +23,7 @@ sed -i "s/OpenWrt /iplcdn build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" packa
 #sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-default-settings
 
 rm -rf package/lean/luci-theme-argon
-rm -rf package/subweb
+rm -rf package/xiaoqingfeng/subweb
 
 sed -i 's/luci-theme-bootstrap/luci-theme-argon-18.06/g' feeds/luci/collections/luci/Makefile
 
