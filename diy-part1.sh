@@ -34,3 +34,8 @@ git clone https://github.com/tindy2013/openwrt-subconverter.git package/subconve
 git clone https://github.com/xiaoqingfengATGH/feeds-xiaoqingfeng.git package/xiaoqingfeng
 
 #====================================================================
+
+rm -rf package/lean/luci-theme-argon
+rm -rf package/xiaoqingfeng/subweb
+#===============================================================================================
+
