@@ -35,7 +35,7 @@ git clone https://github.com/xiaoqingfengATGH/feeds-xiaoqingfeng.git package/xia
 
 #====================================================================
 
-rm -rf package/luci-theme-argon
-rm -rf package/subweb
+#rm -rf package/luci-theme-argon
+#rm -rf package/subweb
 #===============================================================================================
 
