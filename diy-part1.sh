@@ -31,7 +31,7 @@ git clone https://github.com/kenzok8/openwrt-packages.git package/kenzok8-packag
 git clone https://github.com/tty228/luci-app-serverchan.git package/serverchan
 #git clone -b master https://github.com/vernesong/OpenClash.git package/OpenClash
 git clone https://github.com/tindy2013/openwrt-subconverter.git package/subconverter
-git clone https://github.com/xiaoqingfengATGH/feeds-xiaoqingfeng.git package/xiaoqingfeng
+#git clone https://github.com/xiaoqingfengATGH/feeds-xiaoqingfeng.git package/xiaoqingfeng
 
 #====================================================================
 
