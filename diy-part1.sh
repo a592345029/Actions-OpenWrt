@@ -16,9 +16,7 @@ sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 #sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
 
 sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall'         feeds.conf.default
-sed -i '$a src-git jerrykuku https://github.com/jerrykuku/openwrt-package'         feeds.conf.default
 sed -i '$a src-git OpenClash https://github.com/vernesong/OpenClash'               feeds.conf.default
-sed -i '$a src-git kenzok8 https://github.com/kenzok8/openwrt-packages.git'        feeds.conf.default
 sed -i '$a src-git OpenAppFilter https://github.com/destan19/OpenAppFilter'        feeds.conf.default
 
 #====================================================================
@@ -27,16 +25,5 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luc
 git clone https://github.com/tty228/luci-app-serverchan.git package/serverchan
 git clone https://github.com/tindy2013/openwrt-subconverter.git package/subconverter
 
-#git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall
-#git clone https://github.com/jerrykuku/openwrt-package.git package/jerrykuku-package
-#git clone https://github.com/kenzok8/openwrt-packages.git package/kenzok8-packages
-#git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
-#git clone -b master https://github.com/vernesong/OpenClash.git package/OpenClash
-#git clone https://github.com/xiaoqingfengATGH/feeds-xiaoqingfeng.git package/xiaoqingfeng
-
-#====================================================================
-
-#rm -rf package/luci-theme-argon
-#rm -rf package/subweb
 #===============================================================================================
 
