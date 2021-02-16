@@ -1,7 +1,7 @@
 基于Lean的Openwrt源码仓库！
 
 默认登陆IP 192.168.0.1, 密码 password
-
+------
 编译命令如下:
 
 首先装好 Ubuntu 64bit，推荐 Ubuntu 18 LTS x64
@@ -18,7 +18,7 @@ sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git
 sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev patch unzip lib32gcc1 libc6-dev-i386 subversion flex gcc-multilib g++-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils libelf-dev autoconf automake libtool autopoint device-tree-compiler python2.7 zlib1g-dev upx-ucl node-uglify antlr3 gperf wget swig rsync
 
 如果你使用root执行了以上命令，那从此时开始，你必须使用非root权限用户进行后续操作
-
+------
 二次编译：
 
 cd lede
