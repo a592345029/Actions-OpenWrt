@@ -8,13 +8,13 @@
 # Description: Build OpenWrt using GitHub Actions
 #============================================================
 
-name: lean_b70
+name: lean_hc5962
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: lean_b70.config
+  CONFIG_FILE: lean_hc5962.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: true
