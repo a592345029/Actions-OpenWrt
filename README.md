@@ -2,6 +2,23 @@
 
 默认登陆IP 192.168.0.1, 密码 password
 
+编译命令如下:
+
+首先装好 Ubuntu 64bit，推荐 Ubuntu 18 LTS x64
+命令行输入
+sudo apt-get update
+然后输入命令搭建系统环境
+
+以下的命令适用Ubuntu 18
+
+sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev patch python3 python2.7 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex node-uglify git gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx-ucl libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib antlr3 gperf wget curl swig rsync
+
+以下的命令适用Ubuntu 20
+
+sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev patch unzip lib32gcc1 libc6-dev-i386 subversion flex gcc-multilib g++-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils libelf-dev autoconf automake libtool autopoint device-tree-compiler python2.7 zlib1g-dev upx-ucl node-uglify antlr3 gperf wget swig rsync
+
+如果你使用root执行了以上命令，那从此时开始，你必须使用非root权限用户进行后续操作
+
 特别提示：
 ------
 源代码中绝不含任何后门和可以监控或者劫持你的 HTTPS 的闭源软件，SSL 安全是互联网最后的壁垒。安全干净才是固件应该做到的；
