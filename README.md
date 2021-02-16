@@ -22,25 +22,16 @@ sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git
 二次编译：
 
 cd lede
-
 git pull
-
 ./scripts/feeds update -a && ./scripts/feeds install -a
-
 make defconfig
-
 make -j8 download
-
 make -j$(($(nproc) + 1)) V=s
-
 如果需要重新配置：
 
 rm -rf ./tmp && rm -rf .config
-
 make menuconfig
-
 make -j$(($(nproc) + 1)) V=s
-
 编译完成后输出路径：/lede/bin/targets
 
 特别提示：
@@ -66,5 +57,3 @@ Github Actions 是 GitHub 推出的持续集成服务，它提供了配置非常
 - 完成后按快捷键`Ctrl+D`或执行`exit`命令退出，后续编译工作将自动进行。
 - 这样比较灵活，可以根据路由器硬件通过云`menuconfig`自定义配置固件，不需要再导出`.config`和上传
 - 进阶玩法请看P3TERX的博客[中文教程](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
-
-
