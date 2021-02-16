@@ -20,13 +20,19 @@ sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git
 如果你使用root执行了以上命令，那从此时开始，你必须使用非root权限用户进行后续操作
 ------
 二次编译：
-cd lede
-git pull
+cd lede 
+git pull 
 ./scripts/feeds update -a && ./scripts/feeds install -a
 make defconfig
 make -j8 download
 make -j$(($(nproc) + 1)) V=s
 
+如果需要重新配置：
+rm -rf ./tmp && rm -rf .config
+make menuconfig
+make -j$(($(nproc) + 1)) V=s
+
+编译完成后输出路径：/lede/bin/targets
 
 特别提示：
 ------
