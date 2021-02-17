@@ -5,7 +5,7 @@
 编译命令如下:
 
 首先装好 Ubuntu 64bit，推荐 Ubuntu 18 LTS x64
-命令行输入
+```命令行输入
 sudo apt-get update
 使用 git clone https://github.com/coolsnowwolf/lede 命令下载好源代码，然后 cd lede 进入目录
 然后输入命令搭建系统环境
