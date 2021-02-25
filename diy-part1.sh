@@ -18,7 +18,7 @@ sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall'  feeds.conf.default
 sed -i '$a src-git OpenClash https://github.com/vernesong/OpenClash'  feeds.conf.default
 sed -i '$a src-git OpenAppFilter https://github.com/destan19/OpenAppFilter'  feeds.conf.default
-sed -i '$a src-git LingTiGameAcc https://github.com/esirplayground/luci-app-LingTiGameAcc'  feeds.conf.default 
+sed -i '$a src-git LingTiGameAcc https://github.com/esirplayground/LingTiGameAcc'  feeds.conf.default 
 
 #====================================================================
 #添加额外软件包
