@@ -18,7 +18,6 @@ sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall'  feeds.conf.default
 sed -i '$a src-git OpenClash https://github.com/vernesong/OpenClash'  feeds.conf.default
 sed -i '$a src-git OpenAppFilter https://github.com/destan19/OpenAppFilter'  feeds.conf.default
-sed -i '$a src-git LingTiGameAcc https://github.com/esirplayground/LingTiGameAcc'  feeds.conf.default 
 
 #====================================================================
 #添加额外软件包
@@ -26,6 +25,6 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luc
 git clone https://github.com/tty228/luci-app-serverchan.git package/serverchan
 git clone https://github.com/tindy2013/openwrt-subconverter.git package/subconverter
 git clone https://github.com/esirplayground/luci-app-LingTiGameAcc.git package/luci-app-LingTiGameAcc
+git clone ttps://github.com/esirplayground/LingTiGameAcc.git package/LingTiGameAcc
 
 #===============================================================================================
-
