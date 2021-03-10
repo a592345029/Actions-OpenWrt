@@ -33,7 +33,7 @@ on:
         required: false
         default: 'false'
   schedule:
-    - cron: 0 20 * * *
+    - cron: 0 16 * * *
   # - cron: 0 8 */5 * *
   # - cron: 0 22,14 * * *
   # 每天运行两次，在上午 6 点和晚上 22 点。
