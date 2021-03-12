@@ -33,7 +33,7 @@ on:
         required: false
         default: 'false'
   schedule:
-    - cron: 0 16 * * *
+    - cron: 0 18 * * *
   # - cron: 0 8 */5 * *
   # - cron: 0 22,14 * * *
   # 每天运行两次，在上午 6 点和晚上 22 点。
@@ -42,7 +42,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: Ubuntu-18.04
 
     steps:
     - name: Checkout
@@ -186,7 +186,7 @@ jobs:
       uses: dev-drprasad/delete-older-releases@v0.1.0
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       with:
-        keep_latest: 6
+        keep_latest: 3
         delete_tags: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
