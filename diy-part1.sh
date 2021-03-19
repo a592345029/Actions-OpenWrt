@@ -29,3 +29,6 @@ git clone https://github.com/esirplayground/LingTiGameAcc.git package/LingTiGame
 git clone https://github.com/sirpdboy/luci-theme-opentopd package/molun/luci-theme-opentopd
 
 #===============================================================================================
+cp -f $GITHUB_WORKSPACE/mt7621_hiwifi_hc5962.dts ./target/linux/ramips/dts/
+#硬改扩容512MB的B70适用,可以编译更多插件的ramips-mt7621-hiwifi_hc5962-squashfs-factory.bin
+
